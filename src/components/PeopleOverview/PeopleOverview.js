@@ -1,27 +1,49 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
+import InfiniteScroll from "react-infinite-scroller";
+import { getId } from "../../services/utils";
 // Redux
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { Creators as PeopleActions } from "../../redux/ducks/peopleDucks";
 //Components and Styles
 import PeopleCard from "../PeopleCard/PeopleCard";
+import Loading from "../Loading/Loading";
 import { Container } from "./styles";
 
 const PeopleOverview = ({ people: { loading, data }, getRequest }) => {
   //Does the api request when the page is mounted
   useEffect(() => {
-    getRequest(2);
+    if (!data.length) {
+      getRequest(1);
+    }
   }, []);
 
-  if (loading) {
-    return <h1>Loading</h1>;
-  }
+  const loadMoreItems = page => {
+    if (!loading && data.length !== 0) {
+      getRequest(page);
+    }
+  };
+
   return (
     <Container>
-      {data.map(person => (
-        <PeopleCard key={person.name} url={person.url} name={person.name} />
-      ))}
+      <InfiniteScroll
+        element={"section"}
+        pageStart={1}
+        initialLoad={false}
+        loadMore={page => loadMoreItems(page)}
+        threshold={20}
+        hasMore={!loading && data.length !== 0}
+      >
+        {data.map(person => (
+          <PeopleCard
+            key={person.name}
+            id={getId(person.url)}
+            people={person}
+          />
+        ))}
+      </InfiniteScroll>
+      {loading && <Loading />}
     </Container>
   );
 };

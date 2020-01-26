@@ -16,7 +16,11 @@ export default function people(state = INITIAL_STATE, action) {
     case Types.GET_REQUEST:
       return { ...state, loading: true };
     case Types.GET_SUCCESS:
-      return { ...state, data: action.payload, loading: false };
+      return {
+        ...state,
+        data: [...state.data, ...action.payload],
+        loading: false
+      };
     case Types.GET_ERROR:
       return { ...state, loading: false };
     default:

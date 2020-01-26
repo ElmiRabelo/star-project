@@ -1,12 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { getId } from "../../services/utils";
 import { Container } from "./styles";
 
-const PeopleImage = ({ imgId, name }) => {
+const PeopleImage = ({ url, name }) => {
+  const id = getId(url);
   return (
     <Container>
       <img
-        src={`https://starwars-visualguide.com/assets/img/characters/${imgId}.jpg`}
+        src={`https://starwars-visualguide.com/assets/img/characters/${id}.jpg`}
         alt={name}
       />
     </Container>
@@ -14,7 +16,7 @@ const PeopleImage = ({ imgId, name }) => {
 };
 
 PeopleImage.propTypes = {
-  imgId: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired
 };
 

@@ -10,13 +10,11 @@ export const GlobalStyle = createGlobalStyle`
     outline: none;
   }
   body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Exo 2', Arial, sans-serif;
     font-size: 16px;
+    background-color: #012;
   }
   a {
     text-decoration: none; 
-  }
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Lato', sans-serif;
   }
 `;

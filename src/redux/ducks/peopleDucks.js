@@ -26,7 +26,7 @@ export default function people(state = INITIAL_STATE, action) {
 
 //ACTIONS
 export const Creators = {
-  getRequest: () => ({ type: Types.GET_REQUEST }),
+  getRequest: page => ({ type: Types.GET_REQUEST, payload: page }),
   getSuccess: people => ({ type: Types.GET_SUCCESS, payload: people }),
   getError: () => ({ type: Types.GET_ERROR })
 };

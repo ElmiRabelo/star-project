@@ -9,8 +9,9 @@ import PeopleCard from "../PeopleCard/PeopleCard";
 import { Container } from "./styles";
 
 const PeopleOverview = ({ people: { loading, data }, getRequest }) => {
+  //Does the api request when the page is mounted
   useEffect(() => {
-    getRequest();
+    getRequest(2);
   }, []);
 
   if (loading) {
@@ -25,7 +26,18 @@ const PeopleOverview = ({ people: { loading, data }, getRequest }) => {
   );
 };
 
-PeopleOverview.propTypes = {};
+PeopleOverview.propTypes = {
+  getRequest: PropTypes.func.isRequired,
+  people: PropTypes.shape({
+    loading: PropTypes.bool,
+    data: PropTypes.arrayOf(
+      PropTypes.shape({
+        name: PropTypes.string,
+        url: PropTypes.string
+      })
+    )
+  }).isRequired
+};
 
 const mapStateToProps = state => ({
   people: state.people

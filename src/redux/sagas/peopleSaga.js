@@ -2,9 +2,9 @@ import { call, put } from "redux-saga/effects";
 import api from "../../services/api";
 import { Creators as PeopleActions } from "../ducks/peopleDucks";
 
-export default function* getPeople() {
+export default function* getPeople(action) {
   try {
-    const result = yield call(api.get, "people/");
+    const result = yield call(api.get, `people/?page=${action.payload}`);
     console.log(result);
     yield put(PeopleActions.getSuccess(result.data.results));
   } catch (err) {

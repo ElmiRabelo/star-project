@@ -14,10 +14,10 @@ const PeopleCard = ({
     skin_color,
     eye_color,
     birth_year,
-    gender,
-    homeworld,
-    species
+    gender
   },
+  species,
+  homeworld,
   id,
   isOpen
 }) => {

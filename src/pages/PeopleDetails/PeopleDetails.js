@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 //Reudx
 import { connect } from "react-redux";
@@ -8,7 +8,7 @@ import { Creators as DetailsActions } from "../../redux/ducks/detailsDucks";
 import PeopleCard from "../../components/PeopleCard/PeopleCard";
 import Loading from "../../components/Loading/Loading";
 
-const PeopleDetails = ({ getRequest, match, details }) => {
+const PeopleDetails = ({ getRequest, match, details: { loading, data } }) => {
   const id = match.params.id;
   useEffect(() => {
     getRequest(id);
@@ -16,10 +16,16 @@ const PeopleDetails = ({ getRequest, match, details }) => {
 
   return (
     <div>
-      {details.loading ? (
+      {loading || !data.people ? (
         <Loading />
       ) : (
-        <PeopleCard people={details.data} id={id} isOpen />
+        <PeopleCard
+          people={data.people}
+          species={data.species}
+          homeworld={data.homeworld}
+          id={id}
+          isOpen
+        />
       )}
     </div>
   );

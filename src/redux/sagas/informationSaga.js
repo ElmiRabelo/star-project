@@ -18,7 +18,7 @@ export default function* getInformation(action) {
     );
     //Format and send the data to the reducer
     const data = {
-      vehicle: getData(vehiclesResp),
+      vehicles: getData(vehiclesResp),
       films: getData(filmsResp),
       starships: getData(starshipsResp)
     };

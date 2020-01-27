@@ -20,12 +20,16 @@ export const Container = styled.article`
   ${TitleH2} {
     font-size: 18px;
     height: 15%;
+    &:hover {
+      color: ${colors.darkred};
+      cursor: pointer;
+    }
   }
 `;
 
 export const OpenContainer = styled.article`
   display: grid;
-  grid-template-columns: 200px auto;
+  grid-template-columns: 250px auto;
   background-color: ${colors.secondary};
   box-shadow: 0 1px 10px rgba(0, 0, 30, 0.6), 0 1px 10px rgba(0, 0, 30, 0.6);
   border: 1px solid ${colors.suplementar};

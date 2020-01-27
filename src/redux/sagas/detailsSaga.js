@@ -6,14 +6,14 @@ import { Creators as DetailsActions } from "../ducks/detailsDucks";
 
 export default function* getDetails(action) {
   try {
+    //first, make an api request to get the information about a character
     const details = yield call(api.get, `people/${action.payload}/`);
+    //with the information about the caracter, make new apis to get information about the specie and homeworld
     const [species, homeworld] = yield all([
       call(axios.get, details.data.species),
       call(axios.get, details.data.homeworld)
     ]);
-    // const films = yield all(
-    //   details.data.films.map(film => call(axios.get, film))
-    // );
+    //format and send the data to the reducer
     const data = {
       people: details.data,
       species: species.data.name,

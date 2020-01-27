@@ -30,6 +30,9 @@ export const OpenContainer = styled.article`
   box-shadow: 0 1px 10px rgba(0, 0, 30, 0.6), 0 1px 10px rgba(0, 0, 30, 0.6);
   border: 1px solid ${colors.suplementar};
   margin: 10px 0;
+  img {
+    border-radius: 0;
+  }
   .people-informations {
     display: flex;
     flex-direction: column;

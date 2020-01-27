@@ -7,13 +7,13 @@ React-router cuida das rotas da aplicão e Prop-Types lida com a verificação d
 
 ### Instruções
 
-No terminal(CMD, Shell, etc.) use o comando:
-$ yarn
-ou
-$ npm install
+- No terminal(CMD, Shell, etc.) use o comando: <br />
+  $ yarn <br />
+ou <br />
+$ npm install <br />
 
 - Esse comando irá instalar as dependencias necessária para rodar a app.
-  Em seguida, para inicar o app, use o comando:
-  $ npm start
-ou
-$ yarn start
+  Em seguida, para inicar o app, use o comando: <br />
+  $ npm start <br />
+ou <br />
+$ yarn start <br />

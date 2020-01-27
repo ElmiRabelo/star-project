@@ -7,6 +7,9 @@ React-router cuida das rotas da aplicão e Prop-Types lida com a verificação d
 
 ### Instruções
 
+- Clone esse projeto baixando-o como zip ou clonando com o comando no seu terminal: <br />
+  \$ git clone https://github.com/ElmiRabelo/star-project.git <br />
+
 - No terminal(CMD, Shell, etc.) use o comando: <br />
   $ yarn <br />
 ou <br />

@@ -45,6 +45,14 @@ export const DoubleContent = styled.div`
       border-right: none;
     }
   }
+
+  @media (max-width: 560px) {
+    grid-template-columns: 1fr;
+
+    .information-content {
+      border-right: 0;
+    }
+  }
 `;
 
 export const StarContent = styled.div`

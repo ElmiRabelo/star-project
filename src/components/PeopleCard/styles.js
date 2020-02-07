@@ -3,7 +3,7 @@ import colors from "../../styles/colors";
 
 export const TitleH2 = styled.h2`
   font-weight: 300;
-  letter-spacing: 0.2rem;
+  letter-spacing: 0.1rem;
   color: ${colors.suplementar};
   padding-bottom: 5px;
   margin-bottom: 10px;
@@ -14,12 +14,13 @@ export const Container = styled.article`
   display: flex;
   flex-direction: column;
   background-color: ${colors.secondary};
-  box-shadow: 0 1px 10px rgba(0, 0, 30, 0.6), 0 1px 10px rgba(0, 0, 30, 0.6);
+  background-image: url("https://www.transparenttextures.com/patterns/always-grey.png");
   border: 1px solid ${colors.suplementar};
   padding: 10px;
+
   ${TitleH2} {
     font-size: 18px;
-    height: 15%;
+    height: 18%;
     &:hover {
       color: ${colors.darkred};
       cursor: pointer;
@@ -28,6 +29,13 @@ export const Container = styled.article`
 `;
 
 export const OpenContainer = styled.article`
+  @media (max-width: 650px) {
+    grid-template-columns: 1fr;
+    .people-image {
+      display: none;
+    }
+  }
+
   display: grid;
   grid-template-columns: 250px auto;
   background-color: ${colors.secondary};

@@ -69,6 +69,9 @@ const PeopleCard = ({
   }
   return (
     <Container>
+      <div className="line"></div>
+      <div className="line"></div>
+      <div className="line"></div>
       <Link to={`/people/${id}`}>
         <TitleH2>{name}</TitleH2>
       </Link>

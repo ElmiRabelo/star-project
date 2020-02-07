@@ -74,7 +74,7 @@ const InformationCard = ({
               </p>
               <p>
                 <strong>Speed: </strong>
-                {starship.max_atmosphering_speed}
+                {starship.max_atmosphering_speed}/h
               </p>
               <p>
                 <strong>Crew: </strong>
@@ -82,11 +82,11 @@ const InformationCard = ({
               </p>
               <p>
                 <strong>Cargo Capacity: </strong>
-                {starship.cargo_capacity}
+                {starship.cargo_capacity}kg
               </p>
               <p>
                 <strong>Length: </strong>
-                {starship.length}
+                {starship.length}m
               </p>
               <p>
                 <strong>Hyperdrive Rating: </strong>
